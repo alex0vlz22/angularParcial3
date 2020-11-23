@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Registro</h3>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="guardar(f)" #f="ngForm">
+                <div class="row mt-3">
+                    <div class="col primerCol">
+                        <span *ngIf="f.submitted && f.controls['nombre'].errors" class="text-danger animated fadeIn">El nombre es obligatorio.</span>
+                        <input required type="text" placeholder="Nombre" [(ngModel)]="cancion.nombre" name="nombre">
+                    </div>
+                    <div class="col">
+                        <span *ngIf="f.submitted && f.controls['artista'].errors" class="text-danger animated fadeIn">El artista es obligatorio</span>
+                        <input required type="text" placeholder="Artista" [(ngModel)]="cancion.artista" name="artista">
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col primerCol">
+                        <span *ngIf="f.submitted && f.controls['album'].errors" class="text-danger animated fadeIn">El &aacute;lbum es obligatorio</span>
+                        <input required type="text" placeholder="&Aacute;lbum" [(ngModel)]="cancion.album" name="album">
+                    </div>
+                    <div class="col">
+                        <span *ngIf="f.submitted && f.controls['anio'].errors" class="text-danger animated fadeIn">El a&ntilde;o es obligatorio</span>
+                        <input required type="number" placeholder="A&ntilde;o" [(ngModel)]="cancion.anio" name="anio">
+                    </div>
+                </div>
+                <hr>
+                <div class="row mt-4">
+                    <div class="col" colspan="2">
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
